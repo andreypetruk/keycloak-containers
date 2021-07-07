@@ -19,6 +19,8 @@ USER root
 
 RUN microdnf update -y && microdnf install -y glibc-langpack-en gzip hostname java-11-openjdk-headless openssl tar which && microdnf clean all
 
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-11.0.11.0.9-2.el8_4.x86_64
+
 ADD tools /opt/jboss/tools
 RUN /opt/jboss/tools/build-keycloak.sh
 
